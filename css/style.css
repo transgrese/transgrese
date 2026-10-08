@@ -156,43 +156,52 @@ main > h2 {
    --------------------------------------------------------- */
 
 .article-item {
-    margin: 0 0 80px;
+    margin: 0 auto 120px;
 
-    max-width: 780px;
+    max-width: 760px;
 
-    padding-bottom: 60px;
+    padding-bottom: 90px;
 
     border-bottom: 1px solid #111111;
 }
 
 .article-item:last-child {
     border-bottom: none;
+
+    margin-bottom: 0;
 }
 
 .article-item h3 {
-    margin: 0 0 10px;
+    margin: 0 0 14px;
 
-    font-size: 32px;
-    line-height: 1.05;
+    font-size: 42px;
+    line-height: 0.98;
 
     font-weight: 400;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.05em;
 }
 
 .article-item .date {
-    margin: 0 0 28px;
+    margin: 0 0 36px;
 
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1;
 
     color: #555555;
+
+    letter-spacing: 0.02em;
 }
 
 .article-item p {
     font-size: 18px;
     line-height: 1.55;
 
-    margin: 0 0 20px;
+    margin: 0 0 24px;
+}
+
+.article-item .instagram-preview {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -428,103 +437,51 @@ footer p {
         padding: 20px;
     }
 
-    /*
-       Keep the site name prominent on mobile,
-       but slightly smaller than desktop.
-    */
-
     header h1 {
-        font-size: 40px;
-        text-align: center;
-
-        margin-bottom: 24px;
+        font-size: 28px;
     }
 
-
-    /* -----------------------------------------------------
-       MOBILE NAVIGATION
-       ----------------------------------------------------- */
-
     nav {
-        width: 100%;
-
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 20px;
-
-        text-align: center;
+        gap: 16px;
     }
 
     nav a {
-        font-size: 26px;
-        line-height: 1.1;
+        font-size: 15px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE MAIN
-       ----------------------------------------------------- */
 
     main {
-        padding: 50px 20px 70px;
+        padding: 60px 20px 80px;
     }
 
+    main > h2 {
+        margin-bottom: 65px;
 
-    main > h2,
-    .intro h2,
-    #object-main h2 {
-        font-size: 38px;
+        font-size: 46px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE INTRO
-       ----------------------------------------------------- */
-
-    .intro p {
-        font-size: 19px;
-    }
-
-
-    /* -----------------------------------------------------
-       MOBILE ARTICLES
-       ----------------------------------------------------- */
 
     .article-item {
-        margin-bottom: 60px;
-        padding-bottom: 45px;
+        margin-bottom: 85px;
+
+        padding-bottom: 65px;
     }
 
     .article-item h3 {
-        font-size: 27px;
+        font-size: 32px;
+
+        line-height: 1;
+    }
+
+    .article-item .date {
+        margin-bottom: 28px;
     }
 
     .article-item p {
         font-size: 17px;
     }
 
-
-    /* -----------------------------------------------------
-       MOBILE GALLERY
-       ----------------------------------------------------- */
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 18px;
+    .instagram-preview {
+        max-width: 100%;
     }
-
-    .object-card p {
-        font-size: 14px;
-    }
-
-
-    /* -----------------------------------------------------
-       MOBILE FOOTER
-       ----------------------------------------------------- */
 
     footer {
         padding: 20px;
