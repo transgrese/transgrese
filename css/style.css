@@ -5,8 +5,8 @@
 body {
     font-family: system-ui, sans-serif;
     margin: 0;
-    background: #0f0f12;
-    color: #eee;
+    background: #d6d6d2;
+    color: #111111;
 }
 
 header {
@@ -19,7 +19,7 @@ header h1 {
 }
 
 nav a {
-    color: #a78bfa;
+    color: #9b7be8;
     margin-right: 1rem;
     text-decoration: none;
 }
@@ -85,11 +85,11 @@ footer {
     display: block;
     margin-top: 2rem;
     max-width: 600px;
-    border: 1px solid #333;
+    border: 1px solid #111111;
     border-radius: 8px;
     overflow: hidden;
-    background: #1a1a1f;
-    color: #eee;
+    background: #d6d6d2;
+    color: #111111;
     text-decoration: none;
 }
 
@@ -102,9 +102,9 @@ footer {
 .instagram-preview-text {
     display: block;
     padding: 1rem;
-    color: #a78bfa;
+    color: #9b7be8;
 }
 
 .instagram-preview:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
