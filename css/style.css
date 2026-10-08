@@ -80,3 +80,31 @@ footer {
     color: #777;
     font-size: 0.85rem;
 }
+
+.instagram-preview {
+    display: block;
+    margin-top: 2rem;
+    max-width: 600px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1f;
+    color: #eee;
+    text-decoration: none;
+}
+
+.instagram-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.instagram-preview-text {
+    display: block;
+    padding: 1rem;
+    color: #a78bfa;
+}
+
+.instagram-preview:hover {
+    opacity: 0.9;
+}
