@@ -1,4 +1,3 @@
-```css
 /* =========================================================
    TRANS GRESE — SITE STYLE
    Grey / Black / Lilac
@@ -528,4 +527,207 @@ footer p {
         padding: 20px;
     }
 }
-```
+
+/* ==========================================
+   TRANSGRESE — GRAPHIC EDITORIAL REDESIGN
+   Add this at the END of your existing CSS
+   ========================================== */
+
+/* 1. COLOURS
+   Change these values to change the whole palette. */
+
+:root {
+  --paper: #d6d6d2;
+  --ink: #111111;
+  --acid: #e5ff00;
+  --lilac: #a783ef;
+  --star-white: #fffefa;
+  --rule: #222222;
+}
+
+/* 2. PAGE BACKGROUND AND BASIC TYPE */
+
+html {
+  background: var(--paper);
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Keep the existing Pixelify Sans wordmark.
+   If your current logo already has its own styling,
+   that styling can stay in place. */
+
+header h1 {
+  font-family: "Pixelify Sans", monospace;
+}
+
+/* 3. HIGHLIGHTED PAGE HEADINGS
+   Add class="graphic-title" to the main page headings
+   in your HTML. */
+
+.graphic-title {
+  display: table;
+  width: fit-content;
+  max-width: 100%;
+  background: var(--acid);
+  color: var(--ink);
+  padding: 0.08em 0.18em 0.12em;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* 4. ARTICLE TITLES
+   Keep article titles bold, but don't give every
+   article title a giant yellow block. */
+
+.article-item h3 {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+/* Small uppercase dates, like a printed art journal. */
+
+.article-item .date {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* 5. FINE GRAPHIC LINES */
+
+.article-item {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Lilac accent rule below the navigation.
+   Adjust the selector if your navigation uses another element. */
+
+nav {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* 6. LILAC LINKS AND GRAPHIC DETAILS */
+
+nav a {
+  color: var(--lilac);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  transition: color 160ms ease;
+}
+
+nav a:hover {
+  color: var(--ink);
+}
+
+/* 7. DECORATIVE STARBURSTS
+   These are fixed-position shapes, behind the content.
+   Add the star elements shown in the next section. */
+
+.star-decor {
+  position: fixed;
+  display: block;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  clip-path: polygon(
+    48% 0%, 54% 35%, 100% 48%, 58% 54%,
+    52% 100%, 45% 59%, 0% 51%, 40% 45%
+  );
+}
+
+/* Make the content sit above the decorative stars. */
+
+header,
+nav,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Star positions and colours */
+
+.star--one {
+  top: 17%;
+  left: 3%;
+  background: var(--star-white);
+  transform: rotate(12deg) scale(1.1);
+}
+
+.star--two {
+  top: 35%;
+  right: 4%;
+  background: var(--lilac);
+  transform: rotate(28deg) scale(1.35);
+}
+
+.star--three {
+  top: 72%;
+  left: 5%;
+  background: var(--ink);
+  transform: rotate(-8deg) scale(0.7);
+}
+
+.star--four {
+  top: 82%;
+  right: 8%;
+  background: var(--star-white);
+  transform: rotate(-20deg) scale(0.85);
+}
+
+/* 8. MOBILE ADJUSTMENTS */
+
+@media (max-width: 600px) {
+  .graphic-title {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    padding: 0.1em 0.16em;
+  }
+
+  .star-decor {
+    width: 58px;
+    height: 58px;
+    opacity: 0.65;
+  }
+
+  .star--one {
+    top: 19%;
+    left: -10px;
+  }
+
+  .star--two {
+    top: 43%;
+    right: -8px;
+  }
+
+  .star--three {
+    top: 72%;
+    left: -12px;
+  }
+
+  .star--four {
+    display: none;
+  }
+}
+
+/* 9. ACCESSIBILITY
+   Don't animate or move stars; they are decorative.
+   Keep them hidden from pointer interaction. */
+
+@media (prefers-reduced-motion: reduce) {
+  nav a {
+    transition: none;
+  }
+}
