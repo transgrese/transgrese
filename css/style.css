@@ -967,3 +967,72 @@ html::-webkit-scrollbar {
     border-radius: 0;
     will-change: transform;
 }
+
+/* =====================================
+   MOBILE READABILITY IMPROVEMENTS
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    /* Make the Transgrese wordmark easier to see */
+    header h1 {
+        font-size: clamp(2.2rem, 8vw, 2.7rem);
+        line-height: 1.15;
+        letter-spacing: 0;
+    }
+
+    /* Make navigation readable and easier to tap */
+    nav {
+        gap: 12px;
+        row-gap: 6px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px 2px;
+        letter-spacing: 0.07em;
+    }
+
+    /* Enlarge the yellow page headings */
+    .graphic-title {
+        font-size: clamp(2.3rem, 10vw, 3.5rem);
+        line-height: 1.02;
+        padding: 0.1em 0.16em 0.13em;
+        margin-bottom: 0.8em;
+        overflow-wrap: break-word;
+    }
+
+    /* Improve the home-page introduction heading */
+    .intro h2 {
+        font-size: clamp(2.1rem, 8.5vw, 2.7rem);
+        line-height: 1.08;
+    }
+
+    /* Make article titles more prominent */
+    .article-item h3 {
+        font-size: clamp(1.8rem, 7vw, 2.2rem);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+    }
+
+    /* Make paragraph text comfortable to read */
+    .intro p,
+    .article-item p,
+    #object-main > p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    /* Give the page a little more room on narrow phones */
+    main {
+        padding: 44px 18px 64px;
+    }
+
+    /* Keep decorative stars from dominating small screens */
+    .star-decor {
+        width: 48px;
+        height: 48px;
+        opacity: 0.55;
+    }
+}
+
