@@ -8,7 +8,17 @@ const OBJECTS = [
         "images/object1-1.jpg"
     ],
     description: "Poster, risograph print.\n\nWhy is a poster about postmodern society, where styles and aesthetics don't replace each other. They mix.\n\nOrnament sits next to geometry, soft figures next to spikes, all on one sheet. The only thing holding it together is the question in the corner: ЧОМУ. Why.\n\nEvery shape keeps a sharp edge. That is the common language between the different styles.",
-    shopUrl: "https://example.com/shop/object-one"
+
+details: [
+    { label: "FORMAT", value: "A3" },
+    { label: "PRINT", value: "Risograph, one colour" },
+    { label: "INK", value: "Black" },
+    { label: "PAPER", value: "160 gsm" },
+    { label: "EDITION", value: "[EDITION SIZE]" },
+    { label: "CONTACT", value: "Instagram @liza.merzliakova" }
+],
+shopUrl: "https://example.com/shop/object-one"
+
 },
     {
         id: "object-2",
