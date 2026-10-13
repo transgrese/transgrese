@@ -1035,4 +1035,37 @@ html::-webkit-scrollbar {
         opacity: 0.55;
     }
 }
-
+<CodeBlock language="css" editable>
+.object-details {
+    margin-top: 36px;
+    border-top: 1px solid #aaa;
+    font-family: Arial, sans-serif;
+}
+.details-heading {
+    font-size: 12px;
+    padding: 10px 0;
+    margin: 0;
+}
+.detail-row {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    border-top: 1px solid #aaa;
+    padding: 11px 0;
+    font-size: 14px;
+    gap: 8px;
+}
+.detail-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+.detail-value {
+    overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+    .detail-row {
+        grid-template-columns: 30% 70%;
+        font-size: 13px;
+    }
+}
+</CodeBlock>
