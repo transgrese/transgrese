@@ -2,7 +2,7 @@
 const OBJECTS = [
     {
     id: "object-1",
-    name: "WHY",
+    name: "poster: WHY",
     thumbnail: "images/object1-thumb.jpg",
     photos: [
         "images/object1-1.jpg"
