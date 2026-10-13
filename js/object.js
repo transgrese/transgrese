@@ -31,7 +31,7 @@ ${obj.description
     .map(paragraph => `<p>${paragraph.trim()}</p>`)
     .join("")}
 
-
+<strong class="detail-label">${item.label}</strong>
         <a
             class="shop-link"
             href="${obj.shopUrl}"
