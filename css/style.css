@@ -1069,3 +1069,44 @@ html::-webkit-scrollbar {
     }
 }
 </CodeBlock>
+
+/* =====================================
+   FINAL MOBILE HEADER FIX
+   ===================================== */
+
+@media (max-width: 700px) {
+
+    /* Make the site name larger */
+    header h1 {
+        font-size: clamp(30px, 8vw, 38px);
+        line-height: 1.15;
+        letter-spacing: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Give the navigation enough room */
+    header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        width: 100%;
+    }
+
+    /* Make navigation links readable */
+    header nav a {
+        display: inline-block;
+        font-size: clamp(14px, 3.8vw, 16px);
+        line-height: 1.4;
+        letter-spacing: 0.04em;
+        padding: 6px 0;
+        white-space: normal;
+    }
+
+    /* Give the header some breathing room */
+    header {
+        padding: 20px 14px 22px;
+    }
+}
+
