@@ -25,7 +25,12 @@ if (!obj) {
                 .join("")}
         </div>
 
-        <p>${obj.description}</p>
+        
+${obj.description
+    .split(/\n\s*\n/)
+    .map(paragraph => `<p>${paragraph.trim()}</p>`)
+    .join("")}
+
 
         <a
             class="shop-link"
