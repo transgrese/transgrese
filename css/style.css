@@ -278,38 +278,64 @@ main > h2 {
    TRANSGRESE — GALLERY + OBJECT CARDS
    ===================================== */
 
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fill,
-        minmax(min(100%, 220px), 1fr)
-    );
-    gap: 24px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 28px 20px;
+    align-items: start;
 }
+
+/* Default card width */
 
 .object-card {
-    display: block;
-    min-width: 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    color: var(--ink);
-    text-decoration: none;
+    grid-column: span 2;
 }
 
-.object-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border: 1px solid var(--ink);
+/* Two half-width cards */
 
-    transition:
-        transform 220ms ease,
-        opacity 220ms ease,
-        border-color 220ms ease;
+.object-card:nth-child(5n + 1),
+.object-card:nth-child(5n + 2) {
+    grid-column: span 3;
+}
+
+/* A wider feature card */
+
+.object-card:nth-child(5n + 4) {
+    grid-column: span 4;
+}
+
+/* Vary image proportions */
+
+.object-card img {
+    aspect-ratio: 1 / 1;
+}
+
+.object-card:nth-child(5n + 1) img,
+.object-card:nth-child(5n + 4) img {
+    aspect-ratio: 4 / 3;
+}
+
+/* Mobile layout: two balanced columns */
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+    }
+
+    .object-card,
+    .object-card:nth-child(5n + 1),
+    .object-card:nth-child(5n + 2),
+    .object-card:nth-child(5n + 4) {
+        grid-column: span 1;
+    }
+
+    .object-card img,
+    .object-card:nth-child(5n + 1) img,
+    .object-card:nth-child(5n + 4) img {
+        aspect-ratio: 1 / 1;
+    }
 }
 
 /* Object title */
