@@ -791,88 +791,93 @@ footer p {
     }
 }
 
+
 /* =====================================
    TRANSGRESE — FLOATING, ROTATING STARS
    ===================================== */
 
 .star-decor {
-    animation: star-float 8s ease-in-out infinite;
+    animation: star-drift-a 18s ease-in-out infinite;
     will-change: translate, rotate;
 }
 
-/* Give each star its own rhythm */
+/* Each star follows a slightly different path */
 
-.star--one {
-    animation-duration: 7s;
-}
-
-.star--two {
-    animation-duration: 9s;
-    animation-delay: -3s;
-}
-
-.star--three {
-    animation-duration: 11s;
-    animation-delay: -5s;
-}
-
-.star--four {
-    animation-duration: 8s;
-    animation-delay: -2s;
-}
-
-.star--five {
-    animation-duration: 10s;
-    animation-delay: -6s;
-}
-
-.star--six {
-    animation-duration: 7.5s;
-    animation-delay: -4s;
-}
-
-.star--seven {
-    animation-duration: 12s;
-    animation-delay: -1s;
-}
-
-.star--eight {
-    animation-duration: 9.5s;
-    animation-delay: -7s;
-}
-
+.star--one,
+.star--five,
 .star--nine {
-    animation-duration: 8.5s;
-    animation-delay: -3s;
+    animation-name: star-drift-a;
 }
 
+.star--two,
+.star--six,
 .star--ten {
-    animation-duration: 11s;
-    animation-delay: -5s;
+    animation-name: star-drift-b;
 }
 
+.star--three,
+.star--seven,
 .star--eleven {
-    animation-duration: 10s;
-    animation-delay: -2s;
+    animation-name: star-drift-c;
 }
 
-/* Float gently while rotating clockwise */
+.star--four,
+.star--eight {
+    animation-name: star-drift-d;
+}
 
-@keyframes star-float {
-    0% {
-        translate: 0 0;
-        rotate: 0deg;
-    }
+/* Individual speeds and starting offsets */
 
-    50% {
-        translate: 0 -7px;
-        rotate: 180deg;
-    }
+.star--one   { animation-duration: 19s; animation-delay: -4s; }
+.star--two   { animation-duration: 23s; animation-delay: -11s; }
+.star--three { animation-duration: 21s; animation-delay: -7s; }
+.star--four  { animation-duration: 25s; animation-delay: -15s; }
+.star--five  { animation-duration: 22s; animation-delay: -9s; }
+.star--six   { animation-duration: 18s; animation-delay: -12s; }
+.star--seven { animation-duration: 26s; animation-delay: -5s; }
+.star--eight { animation-duration: 24s; animation-delay: -17s; }
+.star--nine  { animation-duration: 20s; animation-delay: -8s; }
+.star--ten   { animation-duration: 27s; animation-delay: -14s; }
+.star--eleven { animation-duration: 22s; animation-delay: -3s; }
 
-    100% {
-        translate: 0 0;
-        rotate: 360deg;
-    }
+/* Path A: gentle diagonal drift */
+
+@keyframes star-drift-a {
+    0%   { translate: 0 0; rotate: 0deg; }
+    25%  { translate: 16px -12px; rotate: 90deg; }
+    50%  { translate: 8px 16px; rotate: 180deg; }
+    75%  { translate: -12px 8px; rotate: 270deg; }
+    100% { translate: 0 0; rotate: 360deg; }
+}
+
+/* Path B: drift in the opposite direction */
+
+@keyframes star-drift-b {
+    0%   { translate: 0 0; rotate: 0deg; }
+    25%  { translate: -18px 10px; rotate: 90deg; }
+    50%  { translate: -8px -16px; rotate: 180deg; }
+    75%  { translate: 12px -6px; rotate: 270deg; }
+    100% { translate: 0 0; rotate: 360deg; }
+}
+
+/* Path C: a wider, wandering loop */
+
+@keyframes star-drift-c {
+    0%   { translate: 0 0; rotate: 0deg; }
+    25%  { translate: 10px 18px; rotate: 90deg; }
+    50%  { translate: -16px 8px; rotate: 180deg; }
+    75%  { translate: -6px -14px; rotate: 270deg; }
+    100% { translate: 0 0; rotate: 360deg; }
+}
+
+/* Path D: a slow sideways drift */
+
+@keyframes star-drift-d {
+    0%   { translate: 0 0; rotate: 0deg; }
+    25%  { translate: -14px -8px; rotate: 90deg; }
+    50%  { translate: 12px -18px; rotate: 180deg; }
+    75%  { translate: 18px 6px; rotate: 270deg; }
+    100% { translate: 0 0; rotate: 360deg; }
 }
 
 /* Respect reduced-motion preferences */
