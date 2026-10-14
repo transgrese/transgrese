@@ -722,3 +722,40 @@ footer p {
         transition: none;
     }
 }
+```css
+/* Subtle floating decorative stars */
+.star-decor {
+    animation: star-float 8s ease-in-out infinite;
+    will-change: translate;
+}
+
+/* Offset the movement so the stars feel organic
+ ---------------------------------------------------------*/
+
+.star--one   { animation-duration: 7s; }
+.star--two   { animation-duration: 9s; animation-delay: -3s; }
+.star--three { animation-duration: 11s; animation-delay: -5s; }
+.star--four  { animation-duration: 8s; animation-delay: -2s; }
+.star--five  { animation-duration: 10s; animation-delay: -6s; }
+.star--six   { animation-duration: 7.5s; animation-delay: -4s; }
+.star--seven { animation-duration: 12s; animation-delay: -1s; }
+.star--eight { animation-duration: 9.5s; animation-delay: -7s; }
+.star--nine  { animation-duration: 8.5s; animation-delay: -3s; }
+.star--ten   { animation-duration: 11s; animation-delay: -5s; }
+.star--eleven { animation-duration: 10s; animation-delay: -2s; }
+
+@keyframes star-float {
+    0%, 100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -7px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .star-decor {
+        animation: none;
+    }
+}
