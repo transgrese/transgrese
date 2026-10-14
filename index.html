@@ -1,105 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transgrese</title>
     <link rel="stylesheet" href="css/style.css">
-    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<!-- Decorative background stars -->
-<span class="star-decor star--one" aria-hidden="true"></span>
-<span class="star-decor star--two" aria-hidden="true"></span>
-<span class="star-decor star--three" aria-hidden="true"></span>
-<span class="star-decor star--four" aria-hidden="true"></span>
-<span class="star-decor star--five" aria-hidden="true"></span>
-<span class="star-decor star--six" aria-hidden="true"></span>
-<span class="star-decor star--seven" aria-hidden="true"></span>
-<span class="star-decor star--eight" aria-hidden="true"></span>
-<span class="star-decor star--nine" aria-hidden="true"></span>
-<span class="star-decor star--ten" aria-hidden="true"></span>
-<span class="star-decor star--eleven" aria-hidden="true"></span>
+    <!-- Decorative background stars -->
+    <span class="star-decor star--one" aria-hidden="true"></span>
+    <span class="star-decor star--two" aria-hidden="true"></span>
+    <span class="star-decor star--three" aria-hidden="true"></span>
+    <span class="star-decor star--four" aria-hidden="true"></span>
+    <span class="star-decor star--five" aria-hidden="true"></span>
+    <span class="star-decor star--six" aria-hidden="true"></span>
+    <span class="star-decor star--seven" aria-hidden="true"></span>
+    <span class="star-decor star--eight" aria-hidden="true"></span>
+    <span class="star-decor star--nine" aria-hidden="true"></span>
+    <span class="star-decor star--ten" aria-hidden="true"></span>
+    <span class="star-decor star--eleven" aria-hidden="true"></span>
 
-<header>
-    <h1>Transgrese</h1>
+    <header>
+        <h1>Transgrese</h1>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="articles.html">Articles</a>
-        <a href="gallery.html">Gallery</a>
-    </nav>
-</header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
 
-<main>
-    <section class="intro">
-        <h2 class="graphic-title">Welcome to Transgrese - the website</h2>
+    <main>
+        <section class="intro">
+            <h2 class="graphic-title">
+                Welcome to Transgrese - the website
+            </h2>
 
-        <p>
-            Transgrese is an experimental hub in Prague ⛓️‍💥.
-            This site presents our texts and the objects we make.
-            We don't sell anything here — objects link out to the shops
-            where they're actually available.
-            Art - Cinema - Community
-        </p>
-    </section>
-</main>
+            <p>
+                Transgrese is an experimental hub in Prague ⛓️‍💥.
+                This site presents our texts and the objects we make.
+                We don't sell anything here — objects link out to the shops
+                where they're actually available.
+                Art - Cinema - Community
+            </p>
+        </section>
+    </main>
 
-<footer>
-    <p>&copy; Transgrese</p>
-</footer>
+    <footer>
+        <p>&copy; Transgrese</p>
+    </footer>
 
-<!-- Custom purple star scrollbar -->
-<div class="star-scrollbar" aria-hidden="true">
-    <div class="star-scrollbar-thumb"></div>
-</div>
+    <!-- Custom purple star scrollbar -->
+    <div class="star-scrollbar" aria-hidden="true">
+        <div class="star-scrollbar-thumb"></div>
+    </div>
 
-<script>
-(function () {
-    const scrollbar = document.querySelector(".star-scrollbar");
-    const star = document.querySelector(".star-scrollbar-thumb");
-
-    if (!scrollbar || !star) return;
-
-    function updateStarScrollbar() {
-        const pageHeight = document.documentElement.scrollHeight;
-        const viewportHeight = window.innerHeight;
-        const maxScroll = pageHeight - viewportHeight;
-
-        const trackHeight = scrollbar.clientHeight;
-        const starHeight = star.offsetHeight;
-        const maxTravel = Math.max(0, trackHeight - starHeight);
-
-        const progress = maxScroll > 0
-            ? Math.min(1, Math.max(0, window.scrollY / maxScroll))
-            : 0;
-
-        star.style.transform =
-            `translateY(${progress * maxTravel}px)`;
-
-        scrollbar.style.display =
-            maxScroll > 0 ? "block" : "none";
-    }
-
-    window.addEventListener("scroll", updateStarScrollbar, {
-        passive: true
-    });
-
-    window.addEventListener("resize", updateStarScrollbar);
-    window.addEventListener("load", updateStarScrollbar);
-
-    if ("ResizeObserver" in window) {
-        new ResizeObserver(updateStarScrollbar).observe(
-            document.documentElement
-        );
-    }
-
-    updateStarScrollbar();
-})();
-</script>
+    <!-- Shared custom scrollbar script -->
+    <script src="js/star-scrollbar.js"></script>
 
 </body>
 </html>
- 
