@@ -915,3 +915,219 @@ footer p {
     }
 }
 
+
+/* =========================================================
+   17. LATEST ARTICLE PREVIEW — HOME PAGE
+   ========================================================= */
+
+.latest-article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 140px;
+    grid-template-rows: auto 1fr;
+    gap: 16px 28px;
+    align-items: center;
+
+    width: 100%;
+    max-width: var(--reading-width);
+    margin: 90px auto 0;
+    padding: 16px 0 22px;
+
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+/* Small heading above the article */
+
+.latest-article-label {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.latest-article-star {
+    color: var(--lilac);
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* Article text */
+
+.latest-article-info {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+}
+
+.latest-article-date {
+    margin: 0 0 9px;
+    color: var(--muted-ink);
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+}
+
+/* Article title */
+
+.latest-article-info h2 {
+    margin: 0 0 10px;
+
+    font-family: "Pixelify Sans", monospace;
+    font-size: clamp(21px, 2.5vw, 28px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.latest-article-info h2 a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.latest-article-info h2 a:hover {
+    color: var(--lilac);
+}
+
+/* Short article excerpt */
+
+.latest-article-excerpt {
+    margin: 0 0 13px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Read article link */
+
+.latest-article-link {
+    display: inline-block;
+    padding: 4px 0;
+
+    border-bottom: 1px solid var(--ink);
+
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+
+    transition: color 180ms ease, border-color 180ms ease;
+}
+
+.latest-article-link span {
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.latest-article-link:hover {
+    color: var(--lilac);
+    border-color: var(--lilac);
+}
+
+/* Small image on the right */
+
+.latest-article-image {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+    border: 1px solid var(--ink);
+    line-height: 0;
+}
+
+.latest-article-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.latest-article-image:hover img {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+/* Keyboard accessibility */
+
+.latest-article a:focus-visible {
+    outline: 2px solid var(--lilac);
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   LATEST ARTICLE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .latest-article {
+        grid-template-columns: minmax(0, 1fr) 95px;
+        gap: 13px 16px;
+
+        margin-top: 65px;
+        padding: 14px 0 18px;
+    }
+
+    .latest-article-label {
+        font-size: 10px;
+    }
+
+    .latest-article-star {
+        font-size: 19px;
+    }
+
+    .latest-article-date {
+        margin-bottom: 8px;
+        font-size: 9px;
+    }
+
+    .latest-article-info h2 {
+        font-size: 20px;
+        line-height: 1.15;
+    }
+
+    .latest-article-excerpt {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .latest-article-link {
+        font-size: 9px;
+    }
+}
+
+/* Extra-small screens */
+
+@media (max-width: 380px) {
+    .latest-article {
+        grid-template-columns: minmax(0, 1fr) 78px;
+        gap: 12px;
+    }
+
+    .latest-article-info h2 {
+        font-size: 18px;
+    }
+
+    .latest-article-excerpt {
+        font-size: 11px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .latest-article-link,
+    .latest-article-image img {
+        transition: none;
+    }
+}
