@@ -953,8 +953,10 @@ footer p {
 }
 
 .latest-article-star {
-    color: var(--lilac);
-    font-size: 22px;
+    color: var(--ink);
+    font-family: "Pixelify Sans", monospace;
+    font-size: 30px;
+    font-weight: 700;
     line-height: 1;
 }
 
