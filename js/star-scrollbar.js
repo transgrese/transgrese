@@ -2,43 +2,43 @@
 /* TRANSGRESE — CUSTOM STAR SCROLLBAR */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Create the scrollbar if it isn't already in the HTML
-    let scrollbar = document.querySelector(".star-scrollbar");
+    const scrollbar = document.querySelector(".star-scrollbar");
+    const star = document.querySelector(".star-scrollbar-thumb");
 
-    if (!scrollbar) {
-        scrollbar = document.createElement("div");
-        scrollbar.className = "star-scrollbar";
-        scrollbar.setAttribute("aria-hidden", "true");
+    if (!scrollbar || !star) return;
 
-        const thumb = document.createElement("div");
-        thumb.className = "star-scrollbar-thumb";
-
-        scrollbar.appendChild(thumb);
-        document.body.appendChild(scrollbar);
-    }
-
-    const thumb = scrollbar.querySelector(".star-scrollbar-thumb");
-
-    if (!thumb) return;
-
-    function updateStar() {
-        const scrollableHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
+    function updateStarScrollbar() {
+        const pageHeight = document.documentElement.scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const maxScroll = pageHeight - viewportHeight;
 
         const trackHeight = scrollbar.clientHeight;
-        const starHeight = thumb.offsetHeight;
-        const travelDistance = Math.max(0, trackHeight - starHeight);
+        const starHeight = star.offsetHeight;
+        const maxTravel = Math.max(0, trackHeight - starHeight);
 
-        const progress = scrollableHeight > 0
-            ? window.scrollY / scrollableHeight
+        const progress = maxScroll > 0
+            ? Math.min(1, Math.max(0, window.scrollY / maxScroll))
             : 0;
 
-        thumb.style.transform =
-            `translateY(${progress * travelDistance}px)`;
+        star.style.transform =
+            `translateY(${progress * maxTravel}px)`;
+
+        scrollbar.style.display =
+            maxScroll > 0 ? "block" : "none";
     }
 
-    window.addEventListener("scroll", updateStar, { passive: true });
-    window.addEventListener("resize", updateStar);
+    window.addEventListener("scroll", updateStarScrollbar, {
+        passive: true
+    });
 
-    updateStar();
+    window.addEventListener("resize", updateStarScrollbar);
+    window.addEventListener("load", updateStarScrollbar);
+
+    if ("ResizeObserver" in window) {
+        new ResizeObserver(updateStarScrollbar).observe(
+            document.documentElement
+        );
+    }
+
+    updateStarScrollbar();
 });
