@@ -790,24 +790,17 @@ footer p {
         transition: none;
     }
 }
-```css
-/* Subtle floating decorative stars */
-.star-decor {
-    animation: star-float 8s ease-in-out infinite;
-    will-change: translate;
-}
 
-```css
 /* =====================================
-   TRANSGRESE — FLOATING STARS
+   TRANSGRESE — FLOATING, ROTATING STARS
    ===================================== */
 
 .star-decor {
     animation: star-float 8s ease-in-out infinite;
-    will-change: translate;
+    will-change: translate, rotate;
 }
 
-/* Give each star its own gentle rhythm */
+/* Give each star its own rhythm */
 
 .star--one {
     animation-duration: 7s;
@@ -863,7 +856,7 @@ footer p {
     animation-delay: -2s;
 }
 
-/* Move stars gently up and down */
+/* Float gently while rotating clockwise */
 
 @keyframes star-float {
     0% {
@@ -882,7 +875,7 @@ footer p {
     }
 }
 
-/* Respect visitors who prefer less movement */
+/* Respect reduced-motion preferences */
 
 @media (prefers-reduced-motion: reduce) {
     .star-decor {
